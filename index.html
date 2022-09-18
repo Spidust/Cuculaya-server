@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+      fetch("http://localhost:5000/api/post/like", {
+        method: "post",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        redirect: 'follow',
+        body: JSON.stringify(
+        {
+          id: 3,
+          token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRldGRpdGVtZGkiLCJyb2xlIjoiVVNFUiIsInV1aWQiOiI2NDM5Mzc5ZC03Yjc3LTQyY2UtYWU3Ny04NDM0ZGQ4YWE5ZTAiLCJpYXQiOjE2NjMyNDE4NjV9.az3asXvrryt_tsORuEn6GLHk-3qd8FgixOCkiCjbgFA"
+        }) 
+        }
+  ).then(data => data.json()).then(data => console.log(data))    
+      </script>
+  </body>
+</html>
